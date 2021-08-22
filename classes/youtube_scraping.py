@@ -7,7 +7,7 @@ class Youtube_Scraping:
     
     #Initialize developer_key with Google API developer key
     def __init__(self):
-        self.developer_key = "AIzaSyDu05uUqdtZAtx3GkRp7pRqq8We-cVm-EI"
+        self.developer_key = ""
         self.api_service_name = "youtube"
         self.api_version = "v3"
         self.youtube = googleapiclient.discovery.build(
