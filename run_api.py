@@ -1,16 +1,17 @@
 import pymongo
 from flask import Flask, request, jsonify
 from werkzeug.exceptions import HTTPException
-from classes.classification import *
-from classes.preprocessing import *
-from classes.youtube_scraping import *
+import json
+import classes.classification
+import classes.preprocessing
+import classes.youtube_scraping as Youtube
 
 app = Flask(__name__)
 #app.config['ENV'] = 'production'
 #app.config['DEBUG'] = False
 #app.config['TESTING'] = False
 
-yt = Youtube_Scraping("")
+yt = Youtube.Youtube_Scraping()
 
 
 @app.route("/api/", methods = ['GET'])

@@ -6,8 +6,8 @@ from collections import defaultdict
 class Youtube_Scraping:
     
     #Initialize developer_key with Google API developer key
-    def __init__(self, dev_key):
-        self.developer_key = dev_key
+    def __init__(self):
+        self.developer_key = "AIzaSyDu05uUqdtZAtx3GkRp7pRqq8We-cVm-EI"
         self.api_service_name = "youtube"
         self.api_version = "v3"
         self.youtube = googleapiclient.discovery.build(
@@ -35,7 +35,7 @@ class Youtube_Scraping:
             comment_col.update({comment_col_length : val["snippet"]["topLevelComment"]["snippet"]})
 
         #Do another request if nextPageToken exists 
-        while response["nextPageToken"] != "":
+        while response.get("nextPageToken") != None:
             request = self.youtube.commentThreads().list(
                 part="snippet",
                 maxResults= max_result,
