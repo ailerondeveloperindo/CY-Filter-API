@@ -1,6 +1,9 @@
 from flask import Blueprint, jsonify
+from controller.youtube import Youtube
+
 
 api_blueprint = Blueprint('api_blueprint', __name__)
+yt = Youtube()
 
 @api_blueprint.route("/api/", methods = ['GET'])
 def ping():

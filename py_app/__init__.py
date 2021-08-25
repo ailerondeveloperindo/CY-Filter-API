@@ -1,3 +1,7 @@
+import sys, os
+# adds working path to sys.path
+sys.path.insert(0,os.path.abspath('./py_app/'))
+
 import json, pymongo
 from flask import Flask, request, jsonify
 from werkzeug.exceptions import HTTPException
