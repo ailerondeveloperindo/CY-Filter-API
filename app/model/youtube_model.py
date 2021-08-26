@@ -9,7 +9,7 @@ class Youtube_Model:
         self.mongo_client = MongoClient(cfg.DATABASE_HOST,cfg.DATABASE_HOST_PORT)
         
         # initialize an object that points to Youtube Collection on Database
-        self.youtube_col = self.mongo_client.cy_filter.Youtube
+        self.youtube_col = self.mongo_client['cy_filter']['Youtube']
 
     def get_devkey(self):
         # returns api_key from youtube collection

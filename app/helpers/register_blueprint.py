@@ -2,7 +2,7 @@ import sys
 import os
 import importlib
 
-class RegBlue:
+class Register_Blueprint:
 
     # blueprint_list_obj = views object from config.py
     def __init__(self, flask_app_obj, blueprint_list_obj):
